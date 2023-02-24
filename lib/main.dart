@@ -46,11 +46,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rice Disease Classifier',
+      title: 'Paddy Disease Classifier',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Rice Disease Classifier'),
+      home: const MyHomePage(title: 'Paddy Disease Classifier'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -232,6 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return LoaderOverlay(
       child: Scaffold(
+        drawer: const Drawer(),
         appBar: AppBar(
           title: Text(widget.title),
         ),

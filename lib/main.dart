@@ -13,12 +13,26 @@ import 'widgets.dart';
 import 'utils.dart';
 
 final List<String> imgList = [
-  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200012.jpg',
-  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200036.jpg',
-  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200068.jpg',
-  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200097.jpg',
-  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200117.jpg',
-  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200144.jpg'
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/bacterial_leaf_blight/100023.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/bacterial_leaf_blight/100049.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/bacterial_leaf_streak/100042.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/bacterial_leaf_streak/100084.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/bacterial_panicle_blight/100043.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/bacterial_panicle_blight/100058.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/blast/100004.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/blast/100006.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/brown_spot/100022.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/brown_spot/100001.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/dead_heart/100008.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/dead_heart/100020.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/downy_mildew/100031.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/downy_mildew/100017.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/hispa/100003.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/hispa/100005.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/normal/100007.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/normal/100002.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/tungro/100011.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/tungro/100013.jpg'
 ];
 
 void main() {

@@ -13,12 +13,12 @@ import 'widgets.dart';
 import 'utils.dart';
 
 final List<String> imgList = [
-  'https://github.com/dnth/paddy_disease_detection/blob/main/classification_dataset/training/blast/IMG_0448.jpg?raw=true',
-  'https://github.com/dnth/paddy_disease_detection/blob/main/classification_dataset/training/blast/IMG_0546.jpg?raw=true',
-  'https://github.com/dnth/paddy_disease_detection/blob/main/classification_dataset/training/blight/IMG_0936.jpg?raw=true',
-  'https://github.com/dnth/paddy_disease_detection/blob/main/classification_dataset/training/blight/IMG_0834.jpg?raw=true',
-  'https://github.com/dnth/paddy_disease_detection/blob/main/classification_dataset/training/tungro/IMG_0399.jpg?raw=true',
-  'https://github.com/dnth/paddy_disease_detection/blob/main/classification_dataset/training/tungro/IMG_0823.jpg?raw=true',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200012.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200036.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200068.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200097.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200117.jpg',
+  'https://raw.githubusercontent.com/dnth/huggingface-timm-mobile-blogpost/main/sample_images/200144.jpg'
 ];
 
 void main() {

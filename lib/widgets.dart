@@ -3,7 +3,7 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 Widget buildPercentIndicator(String className, double classConfidence) {
   return LinearPercentIndicator(
-    width: 300.0,
+    width: 200.0,
     lineHeight: 18.0,
     percent: classConfidence,
     center: Text(
@@ -21,6 +21,7 @@ Widget buildPercentIndicator(String className, double classConfidence) {
 
 Widget buildResultsIndicators(Map resultsDict) {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       buildPercentIndicator(resultsDict['confidences'][0]['label'],
           (resultsDict['confidences'][0]['confidence'])),

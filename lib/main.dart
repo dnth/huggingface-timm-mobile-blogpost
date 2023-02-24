@@ -240,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
           physics: const AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               imageURI == null
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         image: null,
                         packageImage: PackageImage.Image_3,
                         title: 'No image',
-                        // subTitle: 'Select an image or upload your own',
+                        subTitle: 'Select an image',
                         titleTextStyle: const TextStyle(
                           fontSize: 15,
                           color: Color(0xff9da9c7),
@@ -262,17 +262,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     )
-                  : Image.file(imageURI!, height: 200, fit: BoxFit.cover),
+                  : Row(
+                      children: [
+                        const Spacer(),
+                        Image.file(imageURI!, height: 200, fit: BoxFit.cover),
+                        const Spacer(),
+                      ],
+                    ),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               Text("Top 3 predictions",
                   style: Theme.of(context).textTheme.headline6),
-              const SizedBox(height: 20),
-              buildResultsIndicators(_resultDict),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 8),
+              FittedBox(child: buildResultsIndicators(_resultDict)),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Samples",

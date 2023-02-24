@@ -191,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                         child: CachedNetworkImage(
                           imageUrl: item,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                           placeholder: (context, url) =>
                               const CircularProgressIndicator(),
                           errorWidget: (context, url, error) =>
@@ -279,46 +279,49 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               CarouselSlider(
                 options: CarouselOptions(
-                  height: 200,
+                  height: 180,
                   autoPlay: true,
                   // aspectRatio: 2.5,
-                  viewportFraction: 0.35,
-                  enlargeCenterPage: true,
+                  viewportFraction: 0.4,
+                  enlargeCenterPage: false,
                   enlargeStrategy: CenterPageEnlargeStrategy.height,
                 ),
                 items: imageSliders,
               ),
-              RoundedLoadingButton(
-                width: MediaQuery.of(context).size.width * 0.5,
-                color: Colors.blue,
-                successColor: Colors.green,
-                // resetAfterDuration: true,
-                // resetDuration: const Duration(seconds: 10),
-                child: const Text('Classify!',
-                    style: TextStyle(color: Colors.white)),
-                controller: _btnController,
-                onPressed: isClassifying || imageURI == null
-                    ? null // null value disables the button
-                    : () async {
-                        isClassifying = true;
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: RoundedLoadingButton(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  color: Colors.blue,
+                  successColor: Colors.green,
+                  // resetAfterDuration: true,
+                  // resetDuration: const Duration(seconds: 10),
+                  child: const Text('Classify!',
+                      style: TextStyle(color: Colors.white)),
+                  controller: _btnController,
+                  onPressed: isClassifying || imageURI == null
+                      ? null // null value disables the button
+                      : () async {
+                          isClassifying = true;
 
-                        imgBytes = imageURI!.readAsBytesSync();
-                        String base64Image =
-                            "data:image/png;base64," + base64Encode(imgBytes!);
+                          imgBytes = imageURI!.readAsBytesSync();
+                          String base64Image = "data:image/png;base64," +
+                              base64Encode(imgBytes!);
 
-                        try {
-                          final result = await classifyRiceImage(base64Image);
+                          try {
+                            final result = await classifyRiceImage(base64Image);
 
-                          setState(() {
-                            _resultString = parseResultsIntoString(result);
-                            _resultDict = result;
-                          });
-                          _btnController.success();
-                        } catch (e) {
-                          _btnController.error();
-                        }
-                        isClassifying = false;
-                      },
+                            setState(() {
+                              _resultString = parseResultsIntoString(result);
+                              _resultDict = result;
+                            });
+                            _btnController.success();
+                          } catch (e) {
+                            _btnController.error();
+                          }
+                          isClassifying = false;
+                        },
+                ),
               ),
             ],
           ),

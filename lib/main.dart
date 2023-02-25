@@ -79,6 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ]
   };
 
+  String _latency = "N/A";
+
   File? imageURI; // Show on image widget on app
   Uint8List? imgBytes; // Store img to be sent for api inference
   bool isClassifying = false;
@@ -92,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   clearInferenceResults() {
     _resultString = "";
+    _latency = "N/A";
     _resultDict = {
       "label": "None",
       "confidences": [
@@ -273,13 +276,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 8,
               ),
               Text("Top 3 predictions",
-                  style: Theme.of(context).textTheme.headline6),
+                  style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8),
               FittedBox(child: buildResultsIndicators(_resultDict)),
+              const SizedBox(height: 8),
+              Text("Latency: $_latency ms",
+                  style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text("Samples",
-                    style: Theme.of(context).textTheme.headline6),
+                    style: Theme.of(context).textTheme.titleLarge),
               ),
               CarouselSlider(
                 options: CarouselOptions(
@@ -313,11 +320,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               base64Encode(imgBytes!);
 
                           try {
+                            Stopwatch stopwatch = Stopwatch()..start();
                             final result = await classifyRiceImage(base64Image);
 
                             setState(() {
                               _resultString = parseResultsIntoString(result);
                               _resultDict = result;
+                              _latency =
+                                  stopwatch.elapsed.inMilliseconds.toString();
                             });
                             _btnController.success();
                           } catch (e) {

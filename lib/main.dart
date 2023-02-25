@@ -340,8 +340,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.camera),
+        floatingActionButton: FloatingActionButton.extended(
+          label: const Text("Take picture"),
+          icon: const Icon(Icons.camera),
           onPressed: () {
             showModalBottomSheet<void>(
               context: context,

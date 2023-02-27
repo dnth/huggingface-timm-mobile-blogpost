@@ -283,11 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Text("Latency: $_latency ms",
                   style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Samples",
-                    style: Theme.of(context).textTheme.titleLarge),
-              ),
+              Text("Samples", style: Theme.of(context).textTheme.titleLarge),
               CarouselSlider(
                 options: CarouselOptions(
                   height: 180,

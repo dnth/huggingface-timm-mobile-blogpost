@@ -3,8 +3,10 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:empty_widget/empty_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'services.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:loader_overlay/loader_overlay.dart';
@@ -366,6 +368,25 @@ class _MyHomePageState extends State<MyHomePage> {
                           isClassifying = false;
                         },
                 ),
+              ),
+              Row(
+                children: [
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Linkify(
+                      onOpen: (link) async {
+                        if (await canLaunchUrl(Uri.parse(link.url))) {
+                          await launchUrl(Uri.parse(link.url));
+                        } else {
+                          throw 'Could not launch $link';
+                        }
+                      },
+                      text: "Made by https://dicksonneoh.com",
+                    ),
+                  ),
+                  const Spacer(),
+                ],
               ),
             ],
           ),

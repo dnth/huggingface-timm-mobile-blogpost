@@ -47,6 +47,8 @@ dependencies:
   cached_network_image: ^3.2.0
   dio: ^4.0.4
   empty_widget: ^0.0.5
+  flutter_linkify: ^5.0.2
+  url_launcher: ^6.0.0
 
 dev_dependencies:
   flutter_test:

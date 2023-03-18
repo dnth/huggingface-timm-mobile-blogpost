@@ -2,7 +2,7 @@
 
 ![poster_img](https://dicksonneoh.com/images/portfolio/bringing_high_quality_image_models_to_mobile/post_image.gif)
 
-A companion repo for the blog post.
+A companion repo for the [blog post](https://dicksonneoh.com/portfolio/bringing_high_quality_image_models_to_mobile/).
 
 ## iOS Demo (iPhone 14 Pro)
 
